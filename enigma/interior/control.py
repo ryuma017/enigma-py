@@ -42,7 +42,6 @@ class Rotor:
         self.wiring = ROTORS[name]['wiring']
         self.notch = ROTORS[name]['notch']
         self.letters = LETTERS
-        self.steps = 0
         self.set_ringstellung(offset)
         self.set_position(initial_position)
 
@@ -65,14 +64,12 @@ class Rotor:
 
     def set_position(self, initial_position):
         index = self.letters.index(initial_position)
-        self.steps += index + len(LETTERS) - self.letters.index(self.notch) - 1
         self.wiring = self.wiring[index:] + self.wiring[:index]
         self.letters = self.letters[index:] + self.letters[:index]
 
     def step(self):
         self.wiring = self.wiring[1:] + self.wiring[:1]
         self.letters = self.letters[1:] + self.letters[:1]
-        self.steps += 1
 
 
 class Reflector:

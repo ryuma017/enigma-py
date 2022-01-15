@@ -23,11 +23,6 @@ class EnigmaI:
         if char not in LETTERS:
             return char
 
-        # for rotor in self.rotors:
-        #     rotor.step()
-        #     if rotor.letters[-1] != rotor.notch:
-        #         break
-
         for i, rotor in enumerate(self.rotors[:-1]):
             if rotor.letters[0] == rotor.notch:
                 next_roter = self.rotors[i+1]
@@ -37,13 +32,6 @@ class EnigmaI:
                 rotor.step()
             else:
                 break
-
-        # V Q
-
-        print(self.cnt, '|', self.rotors[0].letters[0], self.rotors[0].steps,
-                             self.rotors[1].letters[0], self.rotors[1].steps,
-                             self.rotors[2].letters[0], self.rotors[2].steps)
-        self.cnt += 1
 
         index = LETTERS.index(char)
 
