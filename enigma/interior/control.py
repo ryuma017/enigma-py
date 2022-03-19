@@ -38,7 +38,6 @@ class PlugBoard():
 class Rotor:
 
     def __init__(self, name, initial_position='A', offset='A'):
-        self.name = name
         self.wiring = ROTORS[name]['wiring']
         self.notch = ROTORS[name]['notch']
         self.letters = LETTERS
@@ -75,7 +74,6 @@ class Rotor:
 class Reflector:
 
     def __init__(self, name):
-        self.name = name
         self.wiring = REFLECTORS[name]
         self.wiring_map = {k: v for k, v in zip(LETTERS, self.wiring)}
 
