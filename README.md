@@ -1,4 +1,5 @@
-# enigmaI
+# enigma
+A Python implementation of an Enigma machine.
 
 ## 1. install
     ＄ pip install git+https://github.com/ryuma017/enigma_py
